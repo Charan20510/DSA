@@ -1,0 +1,53 @@
+#   Bubble Sort works by repeatedly comparing every pair of adjacent elements.
+    largest element has "bubbled up" to the end
+
+#   Code Breakdown C++
+
+    #include <bits/stdc++.h>
+    using namespace std;
+
+    void bubbleSort(vector<int>& arr) {   // & = in-place reference, no copy made
+        int n = arr.size();
+        bool swapped;                      // optimization flag
+
+        for (int i = 0; i < n - 1; i++) { // outer: n-1 passes needed at most
+            swapped = false;               // RESET flag at the start of every pass!
+
+            for (int j = 0; j < n - i - 1; j++) { // inner: shrinks by 1 each pass
+                                                    // n-i-1 because last i elements are locked
+                if (arr[j] > arr[j + 1]) {          // adjacent comparison
+                    swap(arr[j], arr[j + 1]);        // STL swap
+                    swapped = true;                  // a swap happened, not done yet
+                }
+            }
+
+            if (!swapped)  // no swaps in this pass = already sorted
+                break;     // early exit — this is the KEY optimization
+        }
+    }
+
+#   Code Breakdown Java
+
+    static void bubbleSort(int[] arr, int n) {
+        int i, j, temp;
+        boolean swapped;
+
+        for (i = 0; i < n - 1; i++) {
+            swapped = false;              // reset each pass
+
+            for (j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // manual swap — no built-in swap for primitive int[]
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            if (swapped == false)         // or: if (!swapped)
+                break;
+        }
+    }
+
+#   Iterative Bubble Sort => normal bubbled sort
