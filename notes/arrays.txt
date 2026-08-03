@@ -1,0 +1,13 @@
+1)  Reverse array
+
+    m1  # use temp array
+        # O(n) Time and O(n) Space
+
+    m2  # use Two Pointers
+        # O(n) Time and O(1) Space
+    
+    m3  # use Single Pointer
+        # O(n) Time and O(1) Space
+    
+    Fx  # use Inbuilt Function
+        # reverse(arr.begin(), arr.end());
