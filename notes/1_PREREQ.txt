@@ -1,0 +1,11 @@
+1)  Find Time of Execution
+    -----------------------
+    g++ program.cpp -o program
+    time ./program
+
+2)  What each term mean
+    --------------------
+    * user 0.00s → Time spent executing your code.
+    * system 0.00s → Time spent by macOS helping your program.
+    * cpu 73% → CPU usage during execution (it can vary each run).
+    * total 0.004s → Actual time from start to finish.
